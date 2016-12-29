@@ -14,8 +14,10 @@ namespace Kalkulator
         private readonly Operators _rightParenthesis;
 
         private Stack<Operators> _operatorsStack;
+        private Stack<Operators> _operatorsStackForParenthesis;
 
         private string _postfixString;
+        private string _postfixParenthesisString;
         private string _postfixFinalString;
 
         public PostfixParser()
@@ -31,6 +33,7 @@ namespace Kalkulator
         {
             var mainExpression = expression;
             _operatorsStack = new Stack<Operators>();
+            _operatorsStackForParenthesis = new Stack<Operators>();
 
             ExpressionActionCreator(mainExpression);
             _postfixFinalString = AddOperatorsFromStackToPostfixString(_postfixString);
@@ -38,7 +41,7 @@ namespace Kalkulator
             return RemoveParenthesisFromExpression(_postfixFinalString);
         }
 
-        private string RemoveParenthesisFromExpression(string expression)
+        private static string RemoveParenthesisFromExpression(string expression)
         {
             return expression.Where(e => e != '(' && e != ')').Aggregate("", (current, e) => current + e);
         }
@@ -62,28 +65,64 @@ namespace Kalkulator
                         CheckPrecendese(_subtraction);
                         break;
                     case '(':
-                        _leftParenthesis.Value++;  //todo
                         CheckPrecendese(_leftParenthesis);
                         break;
                     case ')':
-                        _rightParenthesis.Value++; //todo
                         CheckPrecendese(_rightParenthesis);
                         break;
                     default:
-                        _postfixString += t;
+                        WriteNonOperatorToPostfixString(t);
                         break;
                 }
             }
         }
 
+        private void WriteNonOperatorToPostfixString(char t)
+        {
+            if (_operatorsStackForParenthesis.Count > 0)
+            {
+                _postfixParenthesisString += t;
+            }
+            else
+            {
+                _postfixString += t;
+            }
+        }
+
         private void CheckPrecendese(Operators expressionOperator)
         {
+            if (_operatorsStackForParenthesis.Count > 0)
+            {
+                if (expressionOperator.Token == ')')
+                {
+                    PushParenthesisTokensFromStack();
+                    _postfixString += _postfixParenthesisString;
+                    _postfixParenthesisString = "";
+                    return;
+                }
+                var peekedOperator = _operatorsStackForParenthesis.Peek();
+
+                if (peekedOperator.Value >= expressionOperator.Value)
+                {
+                    PopUpTokensToPostfixString(expressionOperator, _operatorsStackForParenthesis, ref _postfixParenthesisString);
+                }
+                else
+                {
+                    _operatorsStackForParenthesis.Push(expressionOperator);
+                }
+                return;
+            }
+            if (expressionOperator.Token == '(' || expressionOperator.Token == ')')
+            {
+                _operatorsStackForParenthesis.Push(expressionOperator);
+                return;
+            }
             if (_operatorsStack.Count > 0)
             {
                 var peekedOperator = _operatorsStack.Peek();
                 if (peekedOperator.Value >= expressionOperator.Value)
                 {
-                    PopUpTokensToPostfixString(expressionOperator);
+                    PopUpTokensToPostfixString(expressionOperator, _operatorsStack, ref _postfixString);
                 }
                 else
                 {
@@ -93,31 +132,52 @@ namespace Kalkulator
             }
             _operatorsStack.Push(expressionOperator);
         }
-        private void PopUpTokensToPostfixString(Operators expressionOperator)
+
+        private void PushParenthesisTokensFromStack()
         {
-            var tokenPushToStack = true;
-            while (_operatorsStack.Count > 0)
+            while (_operatorsStackForParenthesis.Count > 0)
             {
-                var peekedOperator = _operatorsStack.Peek();
-                if (peekedOperator.Token == '(')
-                {
-                    break;
-                }
+                _postfixParenthesisString += _operatorsStackForParenthesis.ElementAt(0).Token;
+                _operatorsStackForParenthesis.Pop();
+            }
+        }
+
+        private void PopUpTokensToPostfixString(Operators expressionOperator, Stack<Operators> inputStack, ref string inputPostfixString)
+        {
+            var tokenPushToStack = CheckIfFirstDigitShouldBeNegative(expressionOperator, inputStack);
+            while (inputStack.Count > 0)
+            {
+                var peekedOperator = inputStack.Peek();
+
                 if (peekedOperator.Value == expressionOperator.Value && peekedOperator.Token == expressionOperator.Token)
                 {
-                    _postfixString += expressionOperator.Token;
+                    inputPostfixString += expressionOperator.Token;
                     tokenPushToStack = false;
                     break;
                 }
-                if (_operatorsStack.Count == 1 && peekedOperator.Value < expressionOperator.Value)
+                if (inputStack.Count == 1 && peekedOperator.Value < expressionOperator.Value)
                 {
                     break;
                 }
-                _postfixString += peekedOperator.Token;
-                _operatorsStack.Pop();
+                inputPostfixString += peekedOperator.Token;
+                inputStack.Pop();
             }
-            if (tokenPushToStack) _operatorsStack.Push(expressionOperator);
+            if (tokenPushToStack) inputStack.Push(expressionOperator);
         }
+
+        private bool CheckIfFirstDigitShouldBeNegative(Operators expressionOperator, Stack<Operators> inputStack)
+        {
+            if (inputStack.Count != 1 || !inputStack.Contains(_leftParenthesis) ||
+                expressionOperator.Token != '-') return true;
+            _postfixString += expressionOperator.Token;
+            return false;
+        }
+
+        private int CheckNumberOfParenthesis()
+        {
+            return _operatorsStackForParenthesis.Count(operators => operators.Token == '(');
+        }
+
         private string AddOperatorsFromStackToPostfixString(string expressionInput)
         {
             var result = expressionInput;

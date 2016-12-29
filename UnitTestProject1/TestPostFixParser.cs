@@ -194,7 +194,7 @@ namespace UnitTestProject1
             var result = _postfixParser.TryParse(input);
 
             //then
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(expected, result);  
         }
         [Test]
         public void _15_AddMultipleDivideAndSubstractFiveNumbersInParenthesis()
@@ -239,8 +239,21 @@ namespace UnitTestProject1
         public void _18_AddMultipleDivideAndSubstractElevenNumbersInTwoParenthesis()
         {
             //given
-            const string input = "(5*2)+(3/1*(4-+27*3/9*(2*2)6))";
-            const string expected = "52*31/4-273*9/22*6*+*+";
+            const string input = "(-4)*2+(25*2/2+3*(2*2+2))";
+            const string expected = "-42*252*2/322*2+*++";
+
+            //when
+            var result = _postfixParser.TryParse(input);
+
+            //then
+            Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void _19_AddMultipleDivideAndSubstractNumbersInTwoParenthesis()
+        {
+            //given
+            const string input = "(-4)*2+(25*2/2+3*(2*2+2))*2+(32-4+5/2)";
+            const string expected = "-42*252*2/322*2+*+2*+324-52/++";
 
             //when
             var result = _postfixParser.TryParse(input);

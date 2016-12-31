@@ -50,20 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator\Operators\MinusOperator.cs" />
-    <Compile Include="Calculator\Operators\IOperators.cs" />
-    <Compile Include="Calculator\Operators\MultiplicationOperator.cs" />
-    <Compile Include="Calculator\Operators\OperatorsDescription.cs" />
-    <Compile Include="Calculator\Operators\PlusOperator.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calculator\Parser\ReversePolishNotationParser.cs" />
-    <Compile Include="Calculator\OperatorFactory.cs" />
     <Compile Include="Operators.cs" />
+    <Compile Include="PostfixCalculator.cs" />
     <Compile Include="PostfixParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

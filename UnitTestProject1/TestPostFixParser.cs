@@ -1,11 +1,12 @@
 ﻿using System;
+using Calculator;
 using Kalkulator;
 using NUnit.Framework;
 
 namespace UnitTestProject1
 {
     [TestFixture]
-    public class TestPostFixParser
+    public class TestPostfixParser
     {
         private PostfixParser _postfixParser;
 
@@ -171,7 +172,20 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, result);
         }
         [Test]
-        public void _13_AddTwoNumbersInParenthesis()
+        public void _12_MultipleDivideAddExponentiationAndSubstractFourteenDigits()
+        {
+            //given
+            const string input = "1*2/3+4-5^6+7-8/9/10/11*12+13^2";
+            const string expected = "12*3/4+56^-7+89/10/11/12*-132^+";
+
+            //when
+            var result = _postfixParser.TryParse(input);
+
+            //then
+            Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void _14_AddTwoNumbersInParenthesis()
         {
             //given
             const string input = "2+(2+2)";
@@ -184,7 +198,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, result);
         }
         [Test]
-        public void _14_AddMultipleDivideAndSubstractFiveNumbersInParenthesis()
+        public void _15_AddMultipleDivideAndSubstractFiveNumbersInParenthesis()
         {
             //given
             const string input = "(5*2+3/4-6)";
@@ -197,7 +211,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, result);  
         }
         [Test]
-        public void _15_AddMultipleDivideAndSubstractFiveNumbersInParenthesis()
+        public void _16_AddMultipleDivideAndSubstractFiveNumbersInParenthesis()
         {
             //given
             const string input = "5*2+(3/4-6)";
@@ -210,7 +224,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, result);
         }
         [Test]
-        public void _16_AddMultipleDivideAndSubstractFiveNumbersInTwoParenthesis()
+        public void _17_AddMultipleDivideAndSubstractFiveNumbersInTwoParenthesis()
         {
             //given
             const string input = "(5*2)+(3/4-6)";
@@ -223,7 +237,7 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, result);
         }
         [Test]
-        public void _17_AddMultipleDivideAndSubstractSixNumbersInTwoParenthesis()
+        public void _18_AddMultipleDivideAndSubstractSixNumbersInTwoParenthesis()
         {
             //given
             const string input = "(5*2)+(3/1*(4-6))";
@@ -236,11 +250,11 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, result);
         }
         [Test]
-        public void _18_AddMultipleDivideAndSubstractElevenNumbersInTwoParenthesis()
+        public void _19_AddMultipleDivideAndSubstractElevenNumbersInTwoParenthesis()
         {
             //given
             const string input = "(-4)*2+(25*2/2+3*(2*2+2))";
-            const string expected = "-42*252*2/322*2+*++";
+            const string expected = "4-2*252*2/322*2+*++";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -249,11 +263,37 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, result);
         }
         [Test]
-        public void _19_AddMultipleDivideAndSubstractNumbersInTwoParenthesis()
+        public void _20_AddMultipleDivideAndSubstractNumbersInTwoParenthesis()
         {
             //given
             const string input = "(-4)*2+(25*2/2+3*(2*2+2))*2+(32-4+5/2)";
-            const string expected = "-42*252*2/322*2+*+2*+324-52/++";
+            const string expected = "4-2*252*2/322*2+*+2*+324-52/++";
+
+            //when
+            var result = _postfixParser.TryParse(input);
+
+            //then
+            Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void _22_AddMultipleDivideExponentiationAndSubstractNumbersInTwoParenthesis()
+        {
+            //given
+            const string input = "-4*2+(25*2/2+3*(2*^6/2+2))*2+(32-4+5/2)/21*22/(-3*1+2+(-3*2+(2^5)))*2^3";
+            const string expected = "42*-252*2/326^*2/2+*+2*+324-52/+21/22*31*-2+32*-25^++/23^*+";
+
+            //when
+            var result = _postfixParser.TryParse(input);
+
+            //then
+            Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void _23_AddMultipleDivideExponentiationAndSubstractDoubleNumbersInTwoParenthesis()
+        {
+            //given
+            const string input = "(-4.67)*2+(2.5*2/2+3*(2*^6/2+2))*255.56+(32-4+5/2)/2.1*22/(-3*1+2+(-3*2+(2^5)))*2^3";
+            const string expected = "4.67-2*2.52*2/326^*2/2+*+255.56*+324-52/+2.1/22*31*-2+32*-25^++/23^*+";
 
             //when
             var result = _postfixParser.TryParse(input);

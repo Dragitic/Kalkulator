@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Windows.Forms;
 using Kalkulator.Dispatcher;
 
-namespace Kalkulator
+namespace Kalkulator.Logic
 {
     public class PostfixCalculator
     {

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kalkulator
+namespace ClassLibrary1
 {
-    public class OperatorsSpecification
+    public class Class1
     {
-        public char Token { get; set; }
-        public int Value { get; set; }
     }
 }

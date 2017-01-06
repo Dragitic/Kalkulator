@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Calculator;
-using Kalkulator;
+﻿using Kalkulator.Logic;
 using NUnit.Framework;
 
-namespace UnitTestProject1
+namespace CalculatorTest.Logic
 {
     [TestFixture]
     public class TestPostfixCalculator

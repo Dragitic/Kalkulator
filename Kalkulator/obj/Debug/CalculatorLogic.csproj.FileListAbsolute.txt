@@ -1,0 +1,10 @@
+D:\kalkulatorProject\Kalkulator\Kalkulator\bin\Debug\CalculatorLogic.exe.config
+D:\kalkulatorProject\Kalkulator\Kalkulator\bin\Debug\CalculatorLogic.exe
+D:\kalkulatorProject\Kalkulator\Kalkulator\bin\Debug\CalculatorLogic.pdb
+D:\kalkulatorProject\Kalkulator\Kalkulator\bin\Debug\nunit.framework.dll
+D:\kalkulatorProject\Kalkulator\Kalkulator\bin\Debug\nunit.framework.xml
+D:\kalkulatorProject\Kalkulator\Kalkulator\obj\Debug\Calculator.Form1.resources
+D:\kalkulatorProject\Kalkulator\Kalkulator\obj\Debug\CalculatorLogic.Properties.Resources.resources
+D:\kalkulatorProject\Kalkulator\Kalkulator\obj\Debug\CalculatorLogic.csproj.GenerateResource.Cache
+D:\kalkulatorProject\Kalkulator\Kalkulator\obj\Debug\CalculatorLogic.exe
+D:\kalkulatorProject\Kalkulator\Kalkulator\obj\Debug\CalculatorLogic.pdb

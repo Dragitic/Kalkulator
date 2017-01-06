@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Calculator;
-
-namespace Kalkulator.Dispatcher
+﻿namespace Kalkulator.Dispatcher
 {
     public class CalculateAddition : IDispatchCalculation
     {

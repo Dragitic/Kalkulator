@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Calculator;
-
-namespace Kalkulator.Dispatcher
+﻿namespace Kalkulator.Dispatcher
 {
     internal interface IDispatchCalculation
     {

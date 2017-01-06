@@ -1,6 +1,4 @@
-﻿using System;
-using Calculator;
-using Kalkulator;
+﻿using Kalkulator.Logic;
 using NUnit.Framework;
 
 namespace UnitTestProject1

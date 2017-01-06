@@ -20,7 +20,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "a+b";
-            const string expected = "ab+";
+            const string expected = "a#b#+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -33,7 +33,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "a*b+c";
-            const string expected = "ab*c+";
+            const string expected = "a#b#*c#+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -46,7 +46,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "a+b*c";
-            const string expected = "abc*+";
+            const string expected = "a#b#c#*+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -59,7 +59,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "a+b+c";
-            const string expected = "ab+c+";
+            const string expected = "a#b#+c#+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -72,7 +72,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "a+b+c+d";
-            const string expected = "ab+c+d+";
+            const string expected = "a#b#+c#+d#+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -85,7 +85,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "1*2+3*4+5";
-            const string expected = "12*34*+5+";
+            const string expected = "1#2#*3#4#*+5#+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -98,7 +98,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "2-1+4*5-6+7";
-            const string expected = "21-45*+6-7+";
+            const string expected = "2#1#-4#5#*+6#-7#+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -111,7 +111,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "2-1+4*5-6+7*8*9-10";
-            const string expected = "21-45*+6-78*9*+10-";
+            const string expected = "2#1#-4#5#*+6#-7#8#*9#*+10#-";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -124,7 +124,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "2-1+4*5-6+7*8*9-10+11+12*13-14";
-            const string expected = "21-45*+6-78*9*+10-11+1213*+14-";
+            const string expected = "2#1#-4#5#*+6#-7#8#*9#*+10#-11#+12#13#*+14#-";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -137,7 +137,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "1/2/3/4/5/6*7";
-            const string expected = "12/3/4/5/6/7*";
+            const string expected = "1#2#/3#/4#/5#/6#/7#*";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -150,7 +150,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "1*2/3+4-5*6+7-8/9";
-            const string expected = "12*3/4+56*-7+89/-";
+            const string expected = "1#2#*3#/4#+5#6#*-7#+8#9#/-";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -163,7 +163,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "1*2/3+4-5*6+7-8/9/10/11*12";
-            const string expected = "12*3/4+56*-7+89/10/11/12*-";
+            const string expected = "1#2#*3#/4#+5#6#*-7#+8#9#/10#/11#/12#*-";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -176,7 +176,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "1*2/3+4-5^6+7-8/9/10/11*12+13^2";
-            const string expected = "12*3/4+56^-7+89/10/11/12*-132^+";
+            const string expected = "1#2#*3#/4#+5#6#^-7#+8#9#/10#/11#/12#*-13#2#^+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -189,7 +189,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "2+(2+2)";
-            const string expected = "222++";
+            const string expected = "2#2#2#++";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -202,7 +202,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "(5*2+3/4-6)";
-            const string expected = "52*34/+6-";
+            const string expected = "5#2#*3#4#/+6#-";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -215,7 +215,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "5*2+(3/4-6)";
-            const string expected = "52*34/6-+";
+            const string expected = "5#2#*3#4#/6#-+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -228,7 +228,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "(5*2)+(3/4-6)";
-            const string expected = "52*34/6-+";
+            const string expected = "5#2#*3#4#/6#-+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -241,7 +241,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "(5*2)+(3/1*(4-6))";
-            const string expected = "52*31/46-*+";
+            const string expected = "5#2#*3#1#/4#6#-*+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -254,7 +254,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "(-4)*2+(25*2/2+3*(2*2+2))";
-            const string expected = "4-2*252*2/322*2+*++";
+            const string expected = "4#-2#*25#2#*2#/3#2#2#*2#+*++";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -267,7 +267,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "(-4)*2+(25*2/2+3*(2*2+2))*2+(32-4+5/2)";
-            const string expected = "4-2*252*2/322*2+*+2*+324-52/++";
+            const string expected = "4#-2#*25#2#*2#/3#2#2#*2#+*+2#*+32#4#-5#2#/++";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -280,7 +280,7 @@ namespace UnitTestProject1
         {
             //given
             const string input = "-4*2+(25*2/2+3*(2*^6/2+2))*2+(32-4+5/2)/21*22/(-3*1+2+(-3*2+(2^5)))*2^3";
-            const string expected = "42*-252*2/326^*2/2+*+2*+324-52/+21/22*31*-2+32*-25^++/23^*+";
+            const string expected = "4#2#*-25#2#*2#/3#2#6#^*2#/2#+*+2#*+32#4#-5#2#/+21#/22#*3#1#*-2#+3#2#*-2#5#^++/2#3#^*+";
 
             //when
             var result = _postfixParser.TryParse(input);
@@ -292,8 +292,47 @@ namespace UnitTestProject1
         public void _23_AddMultipleDivideExponentiationAndSubstractDoubleNumbersInTwoParenthesis()
         {
             //given
-            const string input = "(-4.67)*2+(2.5*2/2+3*(2*^6/2+2))*255.56+(32-4+5/2)/2.1*22/(-3*1+2+(-3*2+(2^5)))*2^3";
-            const string expected = "4.67-2*2.52*2/326^*2/2+*+255.56*+324-52/+2.1/22*31*-2+32*-25^++/23^*+";
+            const string input = "(-4,67)*2+(2,5*2/2+3*(2*^6/2+2))*255,56+(32-4+5/2)/2,1*22/(-3*1+2+(-3*2+(2^5)))*2^3";
+            const string expected = "4,67#-2#*2,5#2#*2#/3#2#6#^*2#/2#+*+255,56#*+32#4#-5#2#/+2,1#/22#*3#1#*-2#+3#2#*-2#5#^++/2#3#^*+";
+
+            //when
+            var result = _postfixParser.TryParse(input);
+
+            //then
+            Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void _24_AddMultipleDivideExponentiationAndSubstractDoubleNumbersInTwoParenthesis()
+        {
+            //given
+            const string input = "(2^3)+5+(2*3+(40/2))";
+            const string expected = "2#3#^5#+2#3#*40#2#/++";
+
+            //when
+            var result = _postfixParser.TryParse(input);
+
+            //then
+            Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void _25_AddMultipleDivideExponentiationAndSubstractDoubleNumbersInTwoParenthesis()
+        {
+            //given
+            const string input = "(2^3)+5+(2*3+(40/2))+23,55";
+            const string expected = "2#3#^5#+2#3#*40#2#/++23,55#+";
+
+            //when
+            var result = _postfixParser.TryParse(input);
+
+            //then
+                Assert.AreEqual(expected, result);
+        }
+        [Test]
+        public void _26_AddMultipleDivideExponentiationAndSubstractDoubleNumbersInTwoParenthesis()
+        {
+            //given
+            const string input = "(2^3)+5+(2*3+(40/2))+23,55*(2^4+3-1)/2,2";
+            const string expected = "2#3#^5#+2#3#*40#2#/++23,55#2#4#^3#+1#-*2,2#/+";
 
             //when
             var result = _postfixParser.TryParse(input);

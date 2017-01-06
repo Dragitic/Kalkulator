@@ -50,13 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dispatcher\CalculateAddition.cs" />
+    <Compile Include="Dispatcher\CalculateDivision.cs" />
+    <Compile Include="Dispatcher\CalculateExponentiation.cs" />
+    <Compile Include="Dispatcher\CalculateMultiplication.cs" />
+    <Compile Include="Dispatcher\CalculateSubstraction.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dispatcher\IDispatchCalculation.cs" />
     <Compile Include="Operators.cs" />
+    <Compile Include="OperatorsSpecification.cs" />
     <Compile Include="PostfixCalculator.cs" />
     <Compile Include="PostfixParser.cs" />
     <Compile Include="Program.cs" />

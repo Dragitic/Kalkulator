@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Kalkulator.DomainObjects;
+using CalculatorLogic.DomainObjects;
 
-namespace Kalkulator.Logic
+namespace CalculatorLogic.Logic
 {
     public class PostfixParser
     {

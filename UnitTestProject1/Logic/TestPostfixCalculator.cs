@@ -1,4 +1,4 @@
-﻿using Kalkulator.Logic;
+﻿using CalculatorLogic.Logic;
 using NUnit.Framework;
 
 namespace CalculatorTest.Logic

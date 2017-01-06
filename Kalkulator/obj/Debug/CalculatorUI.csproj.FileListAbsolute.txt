@@ -4,3 +4,4 @@ C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\Kalkulator\obj\Debug\Calc
 D:\kalkulatorProject\Kalkulator\Kalkulator\bin\Debug\CalculatorLogic.exe.config
 D:\kalkulatorProject\Kalkulator\Kalkulator\obj\Debug\CalculatorLogic.exe
 D:\kalkulatorProject\Kalkulator\Kalkulator\obj\Debug\CalculatorLogic.pdb
+D:\kalkulatorProject\Kalkulator\Kalkulator\bin\Debug\CalculatorUI.exe.config

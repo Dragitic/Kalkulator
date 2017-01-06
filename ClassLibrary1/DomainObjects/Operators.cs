@@ -1,4 +1,4 @@
-﻿namespace Kalkulator.DomainObjects
+﻿namespace CalculatorLogic.DomainObjects
 {
     public class Operators
     {

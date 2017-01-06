@@ -1,4 +1,4 @@
-﻿namespace Kalkulator.Dispatcher
+﻿namespace CalculatorLogic.Dispatcher
 {
     internal interface IDispatchCalculation
     {

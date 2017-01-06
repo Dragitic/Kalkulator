@@ -7,8 +7,8 @@
     <ProjectGuid>{57E69A2D-AB46-4434-A01A-3D1B9EB2A736}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CalculatorLogic</RootNamespace>
-    <AssemblyName>CalculatorLogic</AssemblyName>
+    <RootNamespace>CalculatorUI</RootNamespace>
+    <AssemblyName>CalculatorUI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

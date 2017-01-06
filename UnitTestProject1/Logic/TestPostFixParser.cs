@@ -1,7 +1,7 @@
 ﻿using Kalkulator.Logic;
 using NUnit.Framework;
 
-namespace UnitTestProject1
+namespace CalculatorTest.Logic
 {
     [TestFixture]
     public class TestPostfixParser

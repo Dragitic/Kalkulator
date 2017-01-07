@@ -1,0 +1,16 @@
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\bin\Debug\CalculatorUI.exe.config
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\bin\Debug\CalculatorUI.exe
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\bin\Debug\CalculatorUI.pdb
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\CalculatorUI.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\MainWindow.g.cs
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\App.g.cs
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\CalculatorUI_MarkupCompile.cache
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\CalculatorUI_MarkupCompile.lref
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\MainWindow.baml
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\CalculatorUI.g.resources
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\CalculatorUI.Properties.Resources.resources
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\CalculatorUI.csproj.GenerateResource.Cache
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\CalculatorUI.exe
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\obj\Debug\CalculatorUI.pdb
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\bin\Debug\CalculatorLogic.dll
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\CalculatorUI\bin\Debug\CalculatorLogic.pdb

@@ -56,8 +56,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Logic\TestPostfixCalculator.cs" />
-    <Compile Include="Logic\TestPostFixParser.cs" />
+    <Compile Include="TestLogic\TestPostfixCalculator.cs" />
+    <Compile Include="TestLogic\TestPostFixParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

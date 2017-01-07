@@ -7,3 +7,12 @@ D:\kalkulatorProject\Kalkulator\UnitTestProject1\obj\Debug\CalculatorTest.dll
 D:\kalkulatorProject\Kalkulator\UnitTestProject1\obj\Debug\CalculatorTest.pdb
 D:\kalkulatorProject\Kalkulator\UnitTestProject1\bin\Debug\ClassLibrary1.dll
 D:\kalkulatorProject\Kalkulator\UnitTestProject1\bin\Debug\ClassLibrary1.pdb
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\bin\Debug\CalculatorTest.dll
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\bin\Debug\CalculatorTest.pdb
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\bin\Debug\CalculatorLogic.dll
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\bin\Debug\nunit.framework.dll
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\bin\Debug\CalculatorLogic.pdb
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\bin\Debug\nunit.framework.xml
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\obj\Debug\CalculatorTest.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\obj\Debug\CalculatorTest.dll
+C:\Users\Mateusz\Desktop\Kalkulator-SeparateOfConcerns\UnitTestProject1\obj\Debug\CalculatorTest.pdb

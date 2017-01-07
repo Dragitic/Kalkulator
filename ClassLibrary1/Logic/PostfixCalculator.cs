@@ -17,12 +17,10 @@ namespace CalculatorLogic.Logic
 
         private string _inputCharacter = "";
         private bool _firstValueIsNegativeNumber;
-
         public PostfixCalculator()
         {
             _numbersList = new Stack<double>();
         }
-
         public string Calculate(string inputExpression)
         {
             for (var position = 0; position < inputExpression.Length; position++)
@@ -31,32 +29,27 @@ namespace CalculatorLogic.Logic
                 {
                     case '^':
                         PostfixCalculationData();
-                        _resultCalculationValue = new CalculateExponentiation().DoAction(_firstCalculationValue,
-                            _secondCalculationValue);
+                        _resultCalculationValue = new CalculateExponentiation().DoAction(_firstCalculationValue, _secondCalculationValue);
                         AddNewValueToStack();
                         break;
                     case '*':
                         PostfixCalculationData();
-                        _resultCalculationValue = new CalculateMultiplication().DoAction(_firstCalculationValue,
-                            _secondCalculationValue);
+                        _resultCalculationValue = new CalculateMultiplication().DoAction(_firstCalculationValue, _secondCalculationValue);
                         AddNewValueToStack();
                         break;
                     case '/':
                         PostfixCalculationData();
-                        _resultCalculationValue = new CalculateDivision().DoAction(_firstCalculationValue,
-                            _secondCalculationValue);
+                        _resultCalculationValue = new CalculateDivision().DoAction(_firstCalculationValue, _secondCalculationValue);
                         AddNewValueToStack();
                         break;
                     case '+':
                         PostfixCalculationData();
-                        _resultCalculationValue = new CalculateAddition().DoAction(_firstCalculationValue,
-                            _secondCalculationValue);
+                        _resultCalculationValue = new CalculateAddition().DoAction(_firstCalculationValue, _secondCalculationValue);
                         AddNewValueToStack();
                         break;
                     case '-':
                         PostfixCalculationData();
-                        _resultCalculationValue = new CalculateSubstraction().DoAction(_firstCalculationValue,
-                            _secondCalculationValue);
+                        _resultCalculationValue = new CalculateSubstraction().DoAction(_firstCalculationValue, _secondCalculationValue);
                         AddNewValueToStack();
                         break;
                     case '#':
@@ -76,6 +69,7 @@ namespace CalculatorLogic.Logic
             var foo = inputExpression[result];
             if (inputExpression[result] != '#' || !StoreInputNumbers())
             {
+                
             }
             else
             {
@@ -123,7 +117,7 @@ namespace CalculatorLogic.Logic
         private void PopUpNumbersAndOperator()
         {
             var iterator = 0;
-            if (_firstValueIsNegativeNumber)
+            if(_firstValueIsNegativeNumber)
                 return;
             while (iterator < 2)
             {
@@ -131,7 +125,6 @@ namespace CalculatorLogic.Logic
                 iterator++;
             }
         }
-
         private string ParseExpressionResultToString()
         {
             var value = _numbersList.ElementAt(0);
